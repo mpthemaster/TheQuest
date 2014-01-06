@@ -1,15 +1,19 @@
-﻿namespace TheQuest
+﻿using System;
+using System.Drawing;
+
+namespace TheQuest
 {
     internal class PotionBlue : Weapon
     {
-        private Game game;
-        private System.Drawing.Point point;
+        public PotionBlue(Game game, Point location)
+            : base(game, location)
+        { }
 
-        public PotionBlue(Game game, System.Drawing.Point point)
+        public override string Name { get { return "Blue Potion"; } }
+
+        public override void Attack(Direction direction, Random random)
         {
-            // TODO: Complete member initialization
-            this.game = game;
-            this.point = point;
+            game.IncreasePlayerHealth(5, random);
         }
     }
 }
