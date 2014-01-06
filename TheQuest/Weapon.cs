@@ -39,5 +39,28 @@ namespace TheQuest
             }
             return false;
         }
+
+        /// <summary>
+        /// Calculates the direction clockwise or counter-clockwise of the current direction.
+        /// </summary>
+        /// <param name="startingDirection">The current direction.</param>
+        /// <param name="clockwise">If true, calculates the direction clockwise of the current position.</param>
+        /// <returns>Returns the calculated direction.</returns>
+        protected Direction newDirection(Direction startingDirection, bool clockwise)
+        {
+            if (clockwise)
+            {
+                startingDirection++;
+                if ((int)startingDirection > 3)
+                    startingDirection = (Direction)0;
+            }
+            else
+            {
+                startingDirection--;
+                if ((int)startingDirection < 0)
+                    startingDirection = (Direction)3;
+            }
+            return startingDirection;
+        }
     }
 }

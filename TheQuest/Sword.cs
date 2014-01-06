@@ -1,15 +1,23 @@
-﻿namespace TheQuest
+﻿using System;
+using System.Drawing;
+
+namespace TheQuest
 {
     internal class Sword : Weapon
     {
-        private Game game;
-        private System.Drawing.Point point;
+        public Sword(Game game, Point location)
+            : base(game, location)
+        { }
 
-        public Sword(Game game, System.Drawing.Point point)
+        public override string Name { get { return "Sword"; } }
+
+        public override void Attack(Direction direction, Random random)
         {
-            // TODO: Complete member initialization
-            this.game = game;
-            this.point = point;
+            int radius = 10, damage = 3;
+
+            if (!DamageEnemy(direction, radius, damage, random))
+                if (!DamageEnemy(newDirection(direction, true), radius, damage, random))
+                    DamageEnemy(newDirection(direction, false), radius, damage, random);
         }
     }
 }

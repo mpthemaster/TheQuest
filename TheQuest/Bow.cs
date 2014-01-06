@@ -1,15 +1,20 @@
-﻿namespace TheQuest
+﻿using System;
+using System.Drawing;
+
+namespace TheQuest
 {
     internal class Bow : Weapon
     {
-        private Game game;
-        private System.Drawing.Point point;
+        public Bow(Game game, Point location)
+            : base(game, location)
+        { }
 
-        public Bow(Game game, System.Drawing.Point point)
+        public override string Name { get { return "Bow"; } }
+
+        public override void Attack(Direction direction, Random random)
         {
-            // TODO: Complete member initialization
-            this.game = game;
-            this.point = point;
+            int radius = 30, damage = 1;
+            DamageEnemy(direction, radius, damage, random);
         }
     }
 }

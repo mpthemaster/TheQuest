@@ -1,15 +1,32 @@
-﻿namespace TheQuest
+﻿using System;
+using System.Drawing;
+
+namespace TheQuest
 {
     internal class Mace : Weapon
     {
-        private Game game;
-        private System.Drawing.Point point;
+        public Mace(Game game, Point location)
+            : base(game, location)
+        { }
 
-        public Mace(Game game, System.Drawing.Point point)
+        public override string Name { get { return "Mace"; } }
+
+        public override void Attack(Direction direction, Random random)
         {
-            // TODO: Complete member initialization
-            this.game = game;
-            this.point = point;
+            int radius = 20, damage = 6;
+
+            if (!DamageEnemy(direction, radius, damage, random))
+            {
+                direction = newDirection(direction, false);
+                if (!DamageEnemy(direction, radius, damage, random))
+                {
+                    direction = newDirection(direction, false);
+                    if (!DamageEnemy(direction, radius, damage, random))
+                    {
+                        DamageEnemy(newDirection(direction, false), radius, damage, random);
+                    }
+                }
+            }
         }
     }
 }
