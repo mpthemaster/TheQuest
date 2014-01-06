@@ -69,5 +69,43 @@ namespace TheQuest
             }
             return newLocation;
         }
+
+        public bool Nearby(Point location, Point target, int radius)
+        {
+            if (Math.Abs(location.X - target.X) < radius && Math.Abs(location.Y - target.Y) < radius)
+                return true;
+            else
+                return false;
+        }
+
+        public Point Move(Direction direction, Point target, Rectangle boundaries)
+        {
+            Point newLocation = target;
+            switch (direction)
+            {
+                case Direction.Up:
+                    if (newLocation.Y - MoveInterval >= boundaries.Top)
+                        newLocation.Y -= MoveInterval;
+                    break;
+
+                case Direction.Down:
+                    if (newLocation.Y + MoveInterval <= boundaries.Bottom)
+                        newLocation.Y += MoveInterval;
+                    break;
+
+                case Direction.Left:
+                    if (newLocation.X - MoveInterval >= boundaries.Left)
+                        newLocation.X -= MoveInterval;
+                    break;
+
+                case Direction.Right:
+                    if (newLocation.X + MoveInterval >= boundaries.Right)
+                        newLocation.X += MoveInterval;
+                    break;
+
+                default: break;
+            }
+            return newLocation;
+        }
     }
 }

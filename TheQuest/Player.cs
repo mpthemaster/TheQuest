@@ -43,6 +43,7 @@ namespace TheQuest
             if (!game.WeaponInRoom.PickedUp && base.Nearby(game.WeaponInRoom.Location, 1))
             {
                 inventory.Add(game.WeaponInRoom);
+                game.WeaponInRoom.PickUpWeapon();
                 if (equippedWeapon == null)
                     Equip(game.WeaponInRoom.Name);
             }
