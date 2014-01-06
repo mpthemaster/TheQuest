@@ -36,7 +36,7 @@ namespace TheQuest
         /// <param name="direction">The direction to move the player one unit in.</param>
         public void Move(Direction direction)
         {
-            base.location = Move(direction, game.Boundaries);
+            base.location = base.Move(direction, game.Boundaries);
 
             //If the player is nearby a weapon on the floor in the room, have the player pick it up.
             //  If this is the player's first weapon, equip it.
@@ -66,7 +66,7 @@ namespace TheQuest
         /// <param name="random"></param>
         public void Hit(int maxDamage, Random random)
         {
-            hp -= random.Next(1, maxDamage);
+            hp -= random.Next(1, ++maxDamage);
         }
 
         /// <summary>

@@ -40,7 +40,7 @@ namespace TheQuest
         /// <param name="random"></param>
         public void Hit(int maxDamage, Random random)
         {
-            hp -= random.Next(1, maxDamage);
+            hp -= random.Next(1, ++maxDamage);
         }
 
         /// <summary>
