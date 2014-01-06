@@ -53,8 +53,8 @@
             this.btnAttackUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.lblPlayerHP = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblBatHP = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -196,6 +196,7 @@
             this.picInventoryBow.TabIndex = 9;
             this.picInventoryBow.TabStop = false;
             this.picInventoryBow.Visible = false;
+            this.picInventoryBow.Click += new System.EventHandler(this.picInventoryBow_Click);
             // 
             // picInventoryPotionBlue
             // 
@@ -207,6 +208,7 @@
             this.picInventoryPotionBlue.TabIndex = 11;
             this.picInventoryPotionBlue.TabStop = false;
             this.picInventoryPotionBlue.Visible = false;
+            this.picInventoryPotionBlue.Click += new System.EventHandler(this.picInventoryPotionBlue_Click);
             // 
             // picInventorySword
             // 
@@ -218,6 +220,7 @@
             this.picInventorySword.TabIndex = 12;
             this.picInventorySword.TabStop = false;
             this.picInventorySword.Visible = false;
+            this.picInventorySword.Click += new System.EventHandler(this.picInventorySword_Click);
             // 
             // picInventoryMace
             // 
@@ -229,6 +232,7 @@
             this.picInventoryMace.TabIndex = 13;
             this.picInventoryMace.TabStop = false;
             this.picInventoryMace.Visible = false;
+            this.picInventoryMace.Click += new System.EventHandler(this.picInventoryMace_Click);
             // 
             // picInventoryPotionRed
             // 
@@ -240,6 +244,7 @@
             this.picInventoryPotionRed.TabIndex = 14;
             this.picInventoryPotionRed.TabStop = false;
             this.picInventoryPotionRed.Visible = false;
+            this.picInventoryPotionRed.Click += new System.EventHandler(this.picInventoryPotionRed_Click);
             // 
             // label1
             // 
@@ -258,6 +263,7 @@
             this.btnMoveUp.TabIndex = 18;
             this.btnMoveUp.Text = "Up";
             this.btnMoveUp.UseVisualStyleBackColor = true;
+            this.btnMoveUp.Click += new System.EventHandler(this.btnMoveUp_Click);
             // 
             // btnMoveLeft
             // 
@@ -267,6 +273,7 @@
             this.btnMoveLeft.TabIndex = 19;
             this.btnMoveLeft.Text = "Left";
             this.btnMoveLeft.UseVisualStyleBackColor = true;
+            this.btnMoveLeft.Click += new System.EventHandler(this.btnMoveLeft_Click);
             // 
             // btnMoveRight
             // 
@@ -276,6 +283,7 @@
             this.btnMoveRight.TabIndex = 20;
             this.btnMoveRight.Text = "Right";
             this.btnMoveRight.UseVisualStyleBackColor = true;
+            this.btnMoveRight.Click += new System.EventHandler(this.btnMoveRight_Click);
             // 
             // btnMoveDown
             // 
@@ -285,6 +293,7 @@
             this.btnMoveDown.TabIndex = 21;
             this.btnMoveDown.Text = "Down";
             this.btnMoveDown.UseVisualStyleBackColor = true;
+            this.btnMoveDown.Click += new System.EventHandler(this.btnMoveDown_Click);
             // 
             // btnAttackDown
             // 
@@ -294,6 +303,7 @@
             this.btnAttackDown.TabIndex = 26;
             this.btnAttackDown.Text = "Down";
             this.btnAttackDown.UseVisualStyleBackColor = true;
+            this.btnAttackDown.Click += new System.EventHandler(this.btnAttackDown_Click);
             // 
             // btnAttackRight
             // 
@@ -303,6 +313,7 @@
             this.btnAttackRight.TabIndex = 25;
             this.btnAttackRight.Text = "Right";
             this.btnAttackRight.UseVisualStyleBackColor = true;
+            this.btnAttackRight.Click += new System.EventHandler(this.btnAttackRight_Click);
             // 
             // btnAttackLeft
             // 
@@ -312,6 +323,7 @@
             this.btnAttackLeft.TabIndex = 24;
             this.btnAttackLeft.Text = "Left";
             this.btnAttackLeft.UseVisualStyleBackColor = true;
+            this.btnAttackLeft.Click += new System.EventHandler(this.btnAttackLeft_Click);
             // 
             // btnAttackUp
             // 
@@ -321,6 +333,7 @@
             this.btnAttackUp.TabIndex = 23;
             this.btnAttackUp.Text = "Up";
             this.btnAttackUp.UseVisualStyleBackColor = true;
+            this.btnAttackUp.Click += new System.EventHandler(this.btnAttackUp_Click);
             // 
             // label2
             // 
@@ -354,6 +367,15 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(156, 100);
             this.tableLayoutPanel1.TabIndex = 27;
             // 
+            // lblPlayerHP
+            // 
+            this.lblPlayerHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPlayerHP.AutoSize = true;
+            this.lblPlayerHP.Location = new System.Drawing.Point(64, 6);
+            this.lblPlayerHP.Name = "lblPlayerHP";
+            this.lblPlayerHP.Size = new System.Drawing.Size(89, 13);
+            this.lblPlayerHP.TabIndex = 1;
+            // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -363,15 +385,6 @@
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Player";
-            // 
-            // lblPlayerHP
-            // 
-            this.lblPlayerHP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblPlayerHP.AutoSize = true;
-            this.lblPlayerHP.Location = new System.Drawing.Point(64, 6);
-            this.lblPlayerHP.Name = "lblPlayerHP";
-            this.lblPlayerHP.Size = new System.Drawing.Size(89, 13);
-            this.lblPlayerHP.TabIndex = 1;
             // 
             // label5
             // 
@@ -466,6 +479,7 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "The Quest";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picBow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPlayer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picGhoul)).EndInit();
