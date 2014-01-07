@@ -116,11 +116,11 @@ namespace TheQuest
         /// <param name="random"></param>
         public void NewLevel(Random random)
         {
+            Enemies = new List<Enemy>();
             level++;
             switch (level)
             {
                 case 1:
-                    Enemies = new List<Enemy>();
                     Enemies.Add(new Bat(this, GetRandomLocation(random)));
                     WeaponInRoom = new Sword(this, GetRandomLocation(random));
                     break;

@@ -9,7 +9,7 @@ namespace TheQuest
         private Weapon equippedWeapon;
         private int hp;
 
-        public int HP { get; set; }
+        public int HP { get { return hp; } }
 
         private List<Weapon> inventory = new List<Weapon>();
 
@@ -93,7 +93,10 @@ namespace TheQuest
             {
                 equippedWeapon.Attack(direction, random);
                 if (equippedWeapon is IPotion)
+                {
                     inventory.Remove(equippedWeapon);
+                    equippedWeapon = null;
+                }
             }
         }
     }

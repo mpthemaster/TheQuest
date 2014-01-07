@@ -53,7 +53,7 @@ namespace TheQuest
                             default: break;
                         }
                     }
-                    base.Move(directionToMove, game.Boundaries);
+                    base.location = base.Move(directionToMove, game.Boundaries);
                 }
             }
         }

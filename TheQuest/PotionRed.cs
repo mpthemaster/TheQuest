@@ -2,7 +2,7 @@
 
 namespace TheQuest
 {
-    internal class PotionRed : Weapon
+    internal class PotionRed : Weapon, IPotion
     {
         public PotionRed(Game game, Point location)
             : base(game, location)
@@ -13,6 +13,14 @@ namespace TheQuest
         public override void Attack(Direction direction, System.Random random)
         {
             game.IncreasePlayerHealth(10, random);
+            used = true;
+        }
+
+        private bool used = false;
+
+        public bool Used
+        {
+            get { return used; }
         }
     }
 }

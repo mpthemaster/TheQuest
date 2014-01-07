@@ -30,7 +30,7 @@ namespace TheQuest
             for (int distance = 0; distance < radius; distance++)
             {
                 foreach (Enemy enemy in game.Enemies)
-                    if (base.Nearby(enemy.Location, target, radius))
+                    if (base.Nearby(enemy.Location, target, radius) && !enemy.Dead)
                     {
                         enemy.Hit(damage, random);
                         return true;

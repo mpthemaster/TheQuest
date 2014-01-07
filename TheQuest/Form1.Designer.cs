@@ -100,7 +100,6 @@
             this.picPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picPlayer.TabIndex = 1;
             this.picPlayer.TabStop = false;
-            this.picPlayer.Visible = false;
             // 
             // picGhoul
             // 
